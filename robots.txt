@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /verify/c/
+Disallow: /en/verify/c/

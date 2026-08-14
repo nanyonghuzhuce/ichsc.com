@@ -1,8 +1,8 @@
-(() => {
+­r‡^Ñf¥–Ø¦{]lyÊ'vÃ®¶›­(() => {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
-  toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+  toggle?.addEventListener('click', () => nav?.classList.add('open'));
   const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 40);
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   const reveal = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.14});
