@@ -1,4 +1,4 @@
-­r‡^Ñf¥–Ø¦{]lyÊ'vÃ®¶›­(() => {
+(() => {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
