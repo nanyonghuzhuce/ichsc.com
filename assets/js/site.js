@@ -28,6 +28,7 @@
   certificateClose?.addEventListener('click', closeCertificate);
   certificateModal?.addEventListener('click', e => { if (e.target === certificateModal) closeCertificate(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCertificate(); });
+
   const verifyForm = document.querySelector('[data-verify-form]');
   verifyForm?.addEventListener('submit', e => {
     const entity = verifyForm.querySelector('[name="entity"]')?.value.trim() || '';
@@ -37,8 +38,6 @@
     const registeredEntity = isEnglish ? 'Henan Qingke Construction Industry Co., Ltd.' : '河南省清科建设实业有限公司';
     const registeredCertificate = 'ICHSC-2026-00354A';
     const matches = (entity === registeredEntity || certificate === registeredCertificate)
-      && (!entity || entity === registeredEntity)
-      && (!certificate || certificate === registeredCertificate)
       && (!level || /2|II|Ⅱ|专业能力|Certified Operator/i.test(level));
     const result = document.querySelector('[data-verify-result]');
     if (matches) {
@@ -49,7 +48,7 @@
     if (result) {
       result.innerHTML = isEnglish
         ? '<strong>No matching certification record</strong><p>Please check the legal entity name or certificate number and try again.</p>'
-        : '<strong>未找到匹配的认证记录</strong><p>请核对单位全称或证书编号后重新查询。</p>';
+        : '<strong>未找到匹配记录</strong><p>请检查单位名称或证书编号后重新查询。</p>';
     }
     e.preventDefault();
   });
